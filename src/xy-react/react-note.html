@@ -8,7 +8,10 @@
     <script src="../js/react.min.js"></script>
     <script src="../js/react-dom.min.js"></script>
     <script src="../js/browser.min.js"></script>
-    <link rel = "stylesheet" type="text/css" href = "../css/main.css">
+     <link rel = "stylesheet" type="text/css" href = "../css/main.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
   </head>
 
   <body>
@@ -36,7 +39,7 @@
           return(
                   <div className = "commentContainer">
                    <textarea ref = "newText" defaultValue = {this.props.children}></textarea>
-                    <button onClick={this.save} className = "button-success" >Save</button>
+                    <button onClick={this.save} className = "btn btn-success" >Save</button>
                   </div>
             );
         },
@@ -44,8 +47,8 @@
           return(
                   <div className = "commentContainer">
                     <div className = "commentText"> {this.props.children} </div>
-                    <button  onClick={this.edit} className = "button-primary">Edit</button>
-                    <button onClick={this.remove} className = "button-danger" >Remove</button>
+                    <button  onClick={this.edit} className = "btn btn-primary">Edit</button>
+                    <button onClick={this.remove} className = "btn btn-danger" >Remove</button>
                   </div>
             );
         },
@@ -94,7 +97,7 @@
         render: function(){
           return (
             <div>
-              <button className = "button-info create" onClick = {this.addComment.bind(null,'Type here')}>New A Comment</button>
+              <button className = "btn btn-info" onClick = {this.addComment.bind(null,'Type here')}>New A Comment</button>
               <div className = "board">
                 {this.state.comments.map(this.eachComment)}
               </div>
